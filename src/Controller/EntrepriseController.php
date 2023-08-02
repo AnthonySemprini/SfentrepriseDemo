@@ -19,7 +19,7 @@ class EntrepriseController extends AbstractController
        
         //$entreprises = $entityManager->getRepository(Entreprise::class)->findAll();
         // SELECT * FROM entreprise WHERE Strasbourg ORDER BY raisonSocial
-        $entreprises = $entrepriseRepository->findBy(["ville" => "Strasbourg"],["raisonSocial" => "ASC"]);
+        $entreprises = $entrepriseRepository->findBy([],["raisonSocial" => "ASC"]);
         return $this->render('entreprise/index.html.twig', [
             'entreprises' => $entreprises
         ]);
