@@ -11,7 +11,7 @@
         Ville : {% if employe.ville %}{{ employe.ville }}{% else %}Ville non renseignée{% endif %}<br>
             
        
-        Date de naissance : {{ employe.dateNaissance | date("d/m/y") }}<br>
+        Age : {{ employe.age }} ans <br>
         Date de embauche : {{ employe.dateEmbauche | date("d/m/y") }}
     </p>
 
