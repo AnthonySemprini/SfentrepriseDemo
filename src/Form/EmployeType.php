@@ -40,6 +40,7 @@ class EmployeType extends AbstractType
                 ]
             ])
             ->add('ville',TextType::class, [
+                'required' => false,                              //permet de laisse la ville vide
                 'attr' => [
                     'class' => 'form-control'
                 ]
