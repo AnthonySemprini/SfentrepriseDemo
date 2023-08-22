@@ -3,11 +3,20 @@
 {% block title %}Liste des employés{% endblock %}
 
 {% block body %}
+<div class="container">
     <h1>Liste des employés</h1>
-    <a class="btn btn-success" href="{{path('new_employe')}}">Ajouter une employé</a><br>
-    {% for employe in employes %}
-        <a href="{{ path('show_employe', {id:employe.id})}}">{{ employe }}</a> 
-        <a class="btn btn-warning" href="{{ path ('edit_employe', {'id': employe.id}) }}">Edit</a>
-        <a class="btn btn-danger" href="{{ path ('delete_employe', {'id': employe.id}) }}">Supp</a><br>
-    {% endfor %}
+    <table class="table table-bordered table-primary table-striped">
+        {% for employe in employes %}
+        <tr>
+            <td><a href="{{ path('show_employe', {id:employe.id})}}">{{ employe }}</a></td>
+            <td><a class="btn btn-warning" href="{{ path ('edit_employe', {'id': employe.id}) }}">Editer</a></td>
+            <td><a class="btn btn-danger" href="{{ path ('delete_employe', {'id': employe.id}) }}">Supprimer</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a class="btn btn-success" href="{{path('new_employe')}}">Ajouter un employé</a><br>
+</div>
 {% endblock %}
+     
+   
+    

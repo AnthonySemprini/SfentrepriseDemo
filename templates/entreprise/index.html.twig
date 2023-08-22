@@ -3,14 +3,25 @@
 {% block title %}Liste des entreprises!{% endblock %}
 
 {% block body %}
+<div class="container">
     <h1>Liste des entreprises</h1>
     
-    <a class="btn btn-success" href="{{path('new_entreprise')}}">Ajouter une entreprise</a><br>
-    {% for entreprise in entreprises %}
-    <a href="{{ path ('show_entreprise', {'id': entreprise.id}) }}">{{ entreprise }}</a>
-    <a class="btn btn-warning" href="{{ path ('edit_entreprise', {'id': entreprise.id}) }}">Edit</a>
-    <a class="btn btn-danger" href="{{ path ('delete_entreprise', {'id': entreprise.id}) }}">Supp</a><br>
-        
-    {% endfor %}
+    <table class="table table-bordered table-primary table-striped">
+        <th>
+            <td>Raison social</td>
+            <td>Modifier</td>
+            <td>Supprimmer</td>
+        </th>
+        {% for entreprise in entreprises %}
+        <tr>
+            <td></td>   
+            <td><a href="{{ path ('show_entreprise', {'id': entreprise.id}) }}">{{ entreprise }}</a></td>
+            <td><a class="btn btn-warning" href="{{ path ('edit_entreprise', {'id': entreprise.id}) }}">Editer</a></td>
+            <td><a class="btn btn-danger" href="{{ path ('delete_entreprise', {'id': entreprise.id}) }}">Supprimer</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a class="btn btn-success" href="{{path('new_entreprise')}}">Ajouter une entreprise</a>
+</div>        
 
 {% endblock %}

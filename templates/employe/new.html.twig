@@ -3,6 +3,7 @@
 {% block title %}Ajouter une employe{% endblock %}
 
 {% block body %}
+<div class="container">
     <h1>Ajouter une employe</h1>
     
     {# {{form(formAddEmploye)}} #}
@@ -29,5 +30,5 @@
         {{ form_row(formAddEmploye.ville)}}
         {{ form_row(formAddEmploye.valider)}}
     {{ form_end(formAddEmploye) }}
-
+</div>
 {% endblock %}

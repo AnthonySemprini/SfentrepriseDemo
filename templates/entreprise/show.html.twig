@@ -1,11 +1,10 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Detail d'une entreprise{% endblock %}
+{% block title %}Detail de {{ entreprise }}{% endblock %}
 
 {% block body %}
-    <h1>Detail d'une entreprise</h1>
-    
-    <h2>{{ entreprise }}</h2>
+<div class="container">
+    <h1>Detail de {{ entreprise }}</h1>
     <p>
         Adresse : {{ entreprise.adresseComplete }}<br>
         Date de création : {{ entreprise.dateCreation | date("d/m/y") }}
@@ -29,4 +28,5 @@
     {% else %}
     <p>Aucun salarié dans cette entreprise</p>
     {% endif %}
+</div>
 {% endblock %}
